@@ -106,6 +106,8 @@ nav a:hover { color: var(--accent); }
     text-decoration: none;
     transition: 0.3s;
     display: inline-block;
+    width: 250px;
+    text-align: center;
 }
 
 /* CENÍK */
@@ -140,6 +142,92 @@ nav a:hover { color: var(--accent); }
 }
 
 @media (max-width: 768px) {
-    header, footer { height: auto; min-height: 80px; padding: 15px 0; }
-    header .container { flex-direction: column; gap: 10px; }
-}
+    /* Zákaz vodorovného rolování pro celou stránku */
+    html, body {
+       height: 100% !important;
+        overflow: hidden !important;
+        position: relative;
+    }
+main {
+        flex-grow: 1;
+        overflow-y: auto !important; /* Vertikální scroll pouze zde */
+        overflow-x: hidden !important; /* Zákaz vodorovného scrollu */
+        -webkit-overflow-scrolling: touch; /* Plynulé scrollování pro iOS */
+    }
+    /* Úprava kontejneru - nesmí vytlačovat obsah ven */
+    .container {
+        width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    header, footer { 
+        height: auto !important; 
+        min-height: 80px; 
+        padding: 15px 0; 
+    }
+    
+    header .container { 
+        flex-direction: column; 
+        gap: 10px; 
+    }
+/* ÚPRAVA OBRÁZKU V HERO SEKCI */
+    #hero {
+        /* 'cover' zajistí vyplnění plochy, 'center' ořeže boky rovnoměrně */
+        background-size: cover !important; 
+        background-position: center center !important;
+        
+        /* Zajištění minimální výšky, aby byl obrázek vidět */
+        padding: 60px 0 !important;
+        min-height: 40vh; 
+        display: flex;
+        align-items: center;
+    }
+
+    /* Zajištění, že text v hero sekci nepřeteče */
+    .hero-content h1 {
+        font-size: 1.8rem !important;
+    }
+
+    /* Ostatní responzivní prvky */
+    .price-item, .about-flex {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    /* 1. Stránka O mně: Obrázek nahoře, text pod ním */
+    .about-wrapper, .about-flex {
+        flex-direction: column !important;
+        gap: 20px !important;
+        text-align: center;
+        min-width: 0 !important; /* KLÍČOVÉ: Zruší vytlačování do stran */
+    }
+
+    .about-image-container, .about-image {
+        max-width: 100% !important;
+        width: 250px !important;
+        margin: 0 auto;
+    }
+
+    /* 2. Stránka Ceník: Obrázek nahoře, text pod ním */
+    .price-item {
+        flex-direction: column !important;
+        height: auto !important;
+        text-align: center;
+        min-width: 0 !important; /* Prevence přetečení */
+    }
+
+    .price-item img {
+        width: 100% !important;
+        height: 200px !important;
+        object-fit: cover;
+    }
+
+    .price-text {
+        padding: 20px !important;
+    }
+
+    .cookie-bar .container {
+        flex-direction: column;
+        text-align: center;
+    }
