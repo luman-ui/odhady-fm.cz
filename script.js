@@ -1,7 +1,7 @@
 const sharedContent = `
     <footer>
         <div class="container" style="display: flex; justify-content: space-between; align-items: center; ">
-            <p style="margin: 0;font-size: 0.9rem; color: #bbbbbb;">Bc. Šárka Radová Blažejová, Palkovice 742, 73 941 &nbsp;Palkovice, &nbsp; tel.+420 777 727 536 &nbsp;&bull; <a href="/gdpr/" style="color: var(--accent); text-decoration: none;">Ochrana údajů</a> &nbsp;&bull; <a href="#" onclick="showCookieBar(); return false;" style="color: var(--accent); text-decoration: none;">Cookies</a></p>
+            <p style="margin: 0;font-size: 0.9rem; color: #bbbbbb;">Bc. Šárka Radová Blažejová, Palkovice 742, 73 941 &nbsp;Palkovice, &nbsp; tel.+420 777 727 536, &nbsp;www.odhady-fm.cz &nbsp;&bull; <a href="/gdpr/" style="color: var(--accent); text-decoration: none;">Ochrana údajů</a> &nbsp;&bull; <a href="#" onclick="showCookieBar(); return false;" style="color: var(--accent); text-decoration: none;">Cookies</a></p>
             <p style="margin: 0; color: #bbbbbb;">
         </div>
     </footer>
